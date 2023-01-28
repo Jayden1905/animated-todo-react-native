@@ -1,10 +1,10 @@
 import AppContainer from './src/components/app-container'
-import MainScreen from './src/screens/main'
+import Navigator from './src/index'
 
 export default function App() {
   return (
     <AppContainer>
-      <MainScreen></MainScreen>
+      <Navigator />
     </AppContainer>
   )
 }
