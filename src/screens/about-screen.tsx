@@ -1,12 +1,95 @@
 import React from 'react'
-import { Box, Text, VStack } from 'native-base'
+import {
+  ScrollView,
+  Box,
+  Text,
+  VStack,
+  Icon,
+  Image,
+  useColorModeValue,
+} from 'native-base'
+import { Feather } from '@expo/vector-icons'
+import AnimatedColorBox from '../components/animated-color-box'
+import Navbar from '../components/navbar'
+import Masthead from '../components/masthead'
+import LinkButton from '../components/link-button'
 
-export default function AboutScreen() {
+const AboutScreen = () => {
   return (
-    <VStack flex={1}>
-      <Box>
-        <Text>About</Text>
-      </Box>
-    </VStack>
+    <AnimatedColorBox
+      flex={1}
+      bg={useColorModeValue('warmGray.50', 'warmGray.900')}
+      w='full'
+    >
+      <Masthead
+        title='About this app'
+        image={require('../assets/about-masthead.png')}
+      >
+        <Navbar />
+      </Masthead>
+      <ScrollView
+        borderTopLeftRadius='20px'
+        borderTopRightRadius='20px'
+        bg={useColorModeValue('warmGray.50', 'primary.900')}
+        mt='-20px'
+        pt='30px'
+        p={4}
+      >
+        <VStack flex={1} space={4}>
+          <Box alignItems='center'>
+            <Image
+              source={require('../assets/pic.jpg')}
+              borderRadius='full'
+              resizeMode='cover'
+              w={120}
+              h={120}
+              alt='author'
+            />
+          </Box>
+          <Text fontSize='md' w='full'>
+            This is me learning React Native by building a simple note taking
+            app.
+          </Text>
+          <LinkButton
+            colorScheme='red'
+            size='lg'
+            borderRadius='full'
+            href='https://www.youtube.com/channel/UCe2DWNFTDlS4aRdHrPeXt4g'
+            leftIcon={
+              <Icon as={Feather} name='youtube' size='sm' opacity={0.5} />
+            }
+          >
+            Go to YouTube channel
+          </LinkButton>
+          <LinkButton
+            colorScheme={useColorModeValue('blue', 'darkBlue')}
+            size='lg'
+            borderRadius='full'
+            href='https://twitter.com/KyawZaYanNaing1'
+            leftIcon={
+              <Icon as={Feather} name='twitter' size='sm' opacity={0.5} />
+            }
+          >
+            @KyawZaYanNaing1
+          </LinkButton>
+          <Text fontSize='md' w='full'>
+            Are you looking forward to read more about me and my work?
+          </Text>
+          <LinkButton
+            colorScheme='purple'
+            size='lg'
+            borderRadius='full'
+            href='https://dev-doc-alpha.vercel.app/'
+            leftIcon={
+              <Icon as={Feather} name='external-link' size='sm' opacity={0.5} />
+            }
+          >
+            Oddinary's Blog
+          </LinkButton>
+        </VStack>
+      </ScrollView>
+    </AnimatedColorBox>
   )
 }
+
+export default AboutScreen
