@@ -6,8 +6,8 @@ import {
   useColorModeValue,
   HStack,
   Icon,
-  Input,
 } from 'native-base'
+import { TextInput } from 'react-native'
 import AnimatedCheckBox from './animated-checkbox'
 import AnimatedTaskLabel from './animated-task-label'
 import SwipableView from './swipable-view'
@@ -87,13 +87,13 @@ export default function TaskItem({
           />
         </Box>
         {isEditing ? (
-          <Input
+          <TextInput
             placeholder='Task'
+            style={{
+              fontSize: 19,
+              color: activeTextColor,
+            }}
             value={subject}
-            variant='unstyled'
-            fontSize={19}
-            px={1}
-            py={0}
             autoFocus
             blurOnSubmit
             onChange={handleChangeSubject}
