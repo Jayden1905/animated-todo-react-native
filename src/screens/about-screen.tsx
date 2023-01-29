@@ -47,8 +47,7 @@ const AboutScreen = () => {
             />
           </Box>
           <Text fontSize='md' w='full'>
-            This is me learning React Native by building a simple note taking
-            app.
+            This is me learning React Native by building a simple to do app.
           </Text>
           <LinkButton
             colorScheme='red'
@@ -73,7 +72,7 @@ const AboutScreen = () => {
             @KyawZaYanNaing1
           </LinkButton>
           <Text fontSize='md' w='full'>
-            Are you looking forward to read more about me and my work?
+            Are you looking forward to read more about me and my works?
           </Text>
           <LinkButton
             colorScheme='purple'
